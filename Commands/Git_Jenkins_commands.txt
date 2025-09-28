@@ -1,0 +1,19 @@
+To run build on Jenkins through Git
+************************************
+python -m venv env
+call ./venv/Scripts/activate.bat
+pip install selenium
+pip install pytest
+pip install openpyxl
+pip install allure-pytest
+pytest --alluredir=./Reports
+
+To run behave framework  on jenkins through Git
+python -m venv venv
+call venv\Scripts\activate.bat
+pip install selenium
+pip install behave
+pip install allure-behave
+behave -f allure_behave.formatter:AllureFormatter -o Reports/features
+allure serve Reports/features
+
